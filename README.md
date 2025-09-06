@@ -76,6 +76,4 @@ To modify the extension:
 - **API errors**: Check that your API key is correct and has credits
 - **Chat not opening**: Try refreshing the YouTube page and try again
 
-## License
 
-This project is open source and available under the MIT License.
