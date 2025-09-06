@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #2d5016;
+      margin: 0;
+      border-radius: 15px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+      background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+      padding: 20px;
+      border-radius: 20px;
+      color: white;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2d5016;
+    }
+
+    input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e8f5e8;
+      border-radius: 25px;
+      font-size: 14px;
+      box-sizing: border-box;
+      background: #fefffe;
+      color: #2d5016;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input[type="password"]:focus, input[type="text"]:focus {
+      border-color: #81c784;
+      box-shadow: 0 0 0 3px rgba(129, 199, 132, 0.2);
+      transform: translateY(-1px);
+    }
+
+    button {
+      width: 100%;
+      padding: 15px 20px;
+      background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+      letter-spacing: 0.5px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #5cb860 0%, #43a047 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0px);
+      box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+    }
+
+    button:disabled {
+      background: #e0e0e0;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .status {
+      margin-top: 20px;
+      padding: 15px 20px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .status.success {
+      background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+      border: 2px solid #81c784;
+      color: #2e7d32;
+    }
+
+    .status.error {
+      background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+      border: 2px solid #e57373;
+      color: #c62828;
+    }
+
+    .status.info {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border: 2px solid #64b5f6;
+      color: #1565c0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .chat-button {
+      background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+      margin-top: 15px;
+    }
+
+    .chat-button:hover {
+      background: linear-gradient(135deg, #76c779 0%, #5cb860 100%);
+    }
+
+    .youtube-check {
+      font-size: 12px;
+      margin-top: 15px;
+      text-align: center;
+      opacity: 0.7;
+      color: #4a7c59;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>🎥 YouTube Q&A Assistant</h2>
+  </div>
+
+  <div id="setup-section">
+    <div class="input-group">
+      <label for="apiKey">OpenAI API Key:</label>
+      <input type="password" id="apiKey" placeholder="sk-...">
+    </div>
+    
+    <button id="saveButton">Save & Ready to Answer</button>
+    
+    <div class="youtube-check">
+      Make sure you're on a YouTube video page
+    </div>
+  </div>
+
+  <div id="ready-section" class="hidden">
+    <div class="status success">
+      ✅ Ready to answer questions!
+    </div>
+    
+    <button id="openChatButton" class="chat-button">Open Chat Interface</button>
+    
+    <button id="changeKeyButton">Change API Key</button>
+  </div>
+
+  <div id="status" class="status hidden"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
